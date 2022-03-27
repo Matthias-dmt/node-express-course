@@ -13,10 +13,12 @@ const showTask = async () => {
     const {
       data: { task },
     } = await axios.get(`/api/v1/tasks/${id}`)
+    console.log(task);
     const { _id: taskID, completed, name } = task
 
     taskIDDOM.textContent = taskID
     taskNameDOM.value = name
+    console.log(taskNameDOM.value);
     tempName = name
     if (completed) {
       taskCompletedDOM.checked = true
